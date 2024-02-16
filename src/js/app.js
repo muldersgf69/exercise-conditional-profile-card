@@ -37,10 +37,10 @@ function render(variables = {}) {
           <h2>Web Developer</h2>
           <h3>Miami, USA</h3>
           <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/4geeksacademy"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/4geeksacademy"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/4geeksacademy"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -60,21 +60,22 @@ window.onload = function() {
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
-    twitter: null,
-    github: null,
-    linkedin: null,
-    instagram: null,
-    name: null,
-    lastName: null,
-    role: null,
-    country: null,
-    city: null
+    twitter: "",
+    github: "",
+    linkedin: "",
+    instagram: "",
+    name: "",
+    lastname: "",
+    role: "",
+    country: "",
+    city: ""
   };
   render(window.variables); // render the card for the first time
 
   document.querySelectorAll(".picker").forEach(function(elm) {
     elm.addEventListener("change", function(e) {
       // <- add a listener to every input
+
       const attribute = e.target.getAttribute("for"); // when any input changes, collect the value
       let values = {};
       values[attribute] =
